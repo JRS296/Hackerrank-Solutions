@@ -4,7 +4,7 @@ import java.text.*;
 import java.util.*;
 import java.util.regex.*;
 
-public class Solution {
+class Solution {
 
     /*
      * Complete the getMoneySpent function below.
@@ -13,7 +13,32 @@ public class Solution {
         /*
          * Write your code here.
          */
-         int ans = 0;
+        for (int i = 0; i < keyboards.length; i++) {
+            // Inner nested loop pointing 1 index ahead
+            for (int j = i + 1; j < keyboards.length; j++) {
+                // Checking elements
+                int temp = 0;
+                if (keyboards[j] < keyboards[i]) {
+                    temp = keyboards[i];
+                    keyboards[i] = keyboards[j];
+                    keyboards[j] = temp;
+                }
+            }
+        }
+        for (int i = 0; i < drives.length; i++) {
+            // Inner nested loop pointing 1 index ahead
+            for (int j = i + 1; j < drives.length; j++) {
+                // Checking elements
+                int temp = 0;
+                if (drives[j] < drives[i]) {
+                    temp = drives[i];
+                    drives[i] = drives[j];
+                    drives[j] = temp;
+                }
+            }
+        }
+        
+        int ans = 0;
          boolean flag = false;
          int count = 0;
          for (int i=0; i<keyboards.length; i++)
@@ -29,14 +54,14 @@ public class Solution {
                     //count++;
                 }
                 else{
-                    count++;
+                    continue;
                 }
 
                 //System.out.println(count);
              }
          }
         //System.out.println(count);
-        //System.out.println(ans);
+        System.out.println(ans);
         
         if (ans==0)
             return -1;
