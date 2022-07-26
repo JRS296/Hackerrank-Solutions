@@ -1,5 +1,3 @@
-package Implementation;
-
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -22,26 +20,41 @@ class Result {
 
     public static int divisibleSumPairs(int n, int k, List<Integer> ar) {
     // Write your code here
-        int count = 0;
-        for (int i=0; i<n; i++)
-        {
-            for (int j=0; j<n; j++)
-            {
-                /*if(i==j)
-                {
-                    continue;
-                }*/
-                if (ar.get(i)<ar.get(j))
-                {
-                    if ((ar.get(i)+ar.get(j))%k==0)
+        // int count = 0;
+        // for (int i=0; i<n; i++)
+        // {
+        //     for (int j=0; j<n; j++)
+        //     {
+        //         /*if(i==j)
+        //         {
+        //             continue;
+        //         }*/
+        //         if (ar.get(i)<ar.get(j))
+        //         {
+        //             if ((ar.get(i)+ar.get(j))%k==0)
+        //             {
+        //                 count++;
+        //             }
+        //         }
+                
+        //     }
+        // }
+        
+        // return count;
+        
+        int count=0;
+        //checking aginst the condition
+        for(int i=0;i<(n-1);i++){
+            for(int j=0;j<n;j++){
+                if(i<j){
+                    if((ar.get(i)+ar.get(j))%k==0)
                     {
                         count++;
                     }
                 }
-                
             }
         }
-        
+        System.out.println(count); 
         return count;
     }
 
