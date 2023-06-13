@@ -71,7 +71,7 @@ class Result {
                 int j = l;
                 int j1 = j;
 
-                while (i < (m1 - 1)) {
+                while (i < (m1 - 1)) {  
                     i++;
                     arr.get(i).set(j, matrix.get(i1++).get(j1));
                 }
